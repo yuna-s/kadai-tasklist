@@ -1,4 +1,6 @@
+<% if logged_in? %>
 <h1>タスク一覧</h1>
+<p>ログイン完了ユーザ: <%= current_user.name %></p>
 <ul>
     <% @tasks.each do |task| %>
     <li>
@@ -10,3 +12,6 @@
     <% end %>
 </ul>
 <%= link_to '新規タスクの投稿', new_task_path %>
+<% else %>
+<h1>タスク一覧</h1>
+<% end %>
